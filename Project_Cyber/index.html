@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <link rel="icon" href="./images/Website icon.png" type="icon/x-image">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.2.3/css/bootstrap.min.css">
+</head>
+
+<div class="form-container">
+    <div class="card">
+        <div class="container" style="text-align:center;">
+            <div class="input-box">
+                <input type="password" class="custom-input" placeholder="password" id="password" required maxlength="20" style="color: #ffffff;">
+                <button type="submit" class="custom-button" style="color: #767575;">Enter</button>
+                <div style="margin-top:.5rem"><input type="checkbox" onclick="togglePassword()" >  <span style="color: rgb(139, 139, 139);">แสดงรหัสผ่าน</span></div>
+                <p id="message"><span id="strength"></span></p>
+            </div>
+        </div>
+    </div>    
+</div> 
+    
+
+    <!--JS File-->
+    <script src="./script.js"></script>
+</body>
+
+<style>
+    body {
+        background: linear-gradient(45deg, #181818, #222222, #181818);
+        background-size: 400% 400%;
+        animation: gradientMove 8s ease infinite;
+        font-family: 'Roboto', sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @keyframes gradientMove {
+        0% {
+            background-position: 0% 50%;
+        }
+    
+        50% {
+            background-position: 100% 50%;
+        }
+    
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
+    .form-container {
+        background: rgba(17, 14, 23, 0.8);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .custom-input {
+        width: 100px;
+        height: 15px;
+        padding: 5px;
+        background-color: #363a4a;
+        font: #ffffff;
+      }
+
+      .custom-button {
+        width: 50px;
+        height: 35px;
+        padding: 0px;
+        border-radius: 50%;
+        background-color: #363a4a;
+        font: #ffffff;
+        cursor: pointer;
+        
+      }
+    
+      .card{
+        margin: 0 auto;
+        padding: 2em;
+        width: 300px;
+        background: #1c1f2b;
+        text-align: center;
+        border-radius: 10px;
+        position: relative;
+      }
+      
+      @property --angle{
+        syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+      }
+      
+      .card::after, .card::before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: -1;
+        padding: 3px;
+        border-radius: 10px;
+        animation: 3s spin linear infinite;
+      }
+      .card::before{
+        filter: blur(1.5rem);
+        opacity: 0.5;
+      }
+      @keyframes spin{
+        from{
+          --angle: 0deg;
+        }
+        to{
+          --angle: 360deg;
+        }
+      }
+    
+  </style>
+
+</html>
