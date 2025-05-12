@@ -1,4 +1,4 @@
-# 🔐 Password Strength Checker
+# 🔐 Password-Strength-Checker
 
 ![Password Strength Checker](https://i.postimg.cc/0Qtnhnjr/Password-Strength-Checker.png)
 
